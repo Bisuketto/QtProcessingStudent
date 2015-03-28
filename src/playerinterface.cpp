@@ -352,7 +352,7 @@ void PlayerInterface::openFile(QString* name)
 //
 void PlayerInterface::changePosition(int newPosition)
 {
-    cout << "(II) Un changement de filtre a ete enregistre..." << endl;
+    cout << "(II) Un changement de filtre a ete enregistre... (" << newPosition << ")"  << endl;
     if( _isPlaying == true ) return;
     drawNextFrame();
 }
