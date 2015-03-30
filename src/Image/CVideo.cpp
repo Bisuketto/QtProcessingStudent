@@ -153,7 +153,7 @@ void CVideo::getNextVideoFrame( FastImage* buffer ){
         return;
     }
 
-    frame = cvQueryFrame( capture );
+//    frame = cvQueryFrame( capture );
     buffer->resize(frame->height, frame->width);
     buffer->FastImageFill( frame );
 /*
