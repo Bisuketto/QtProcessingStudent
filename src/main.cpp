@@ -11,12 +11,6 @@
 #include "./Image/CVideo.h"
 
 
-extern "C" {
-        #include <libavcodec/avcodec.h>
-        #include <libavformat/avformat.h>
-        #include <libswscale/swscale.h>
-}
-
 int main(int argc,char **argv)
 {
     QApplication app(argc,argv);
