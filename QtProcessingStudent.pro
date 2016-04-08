@@ -2,7 +2,7 @@ TEMPLATE = app
 TARGET = QtProcessing
 
 QMAKE_CXXFLAGS= -O2 \
-       -msse -msse2 -mtune=native -pipe -fomit-frame-pointer \
+       -march=native -mtune=native -pipe -fomit-frame-pointer \
        -fprefetch-loop-arrays -I/opt/local/include
 
 LIBS += -lz -lm -L/opt/local/lib -lopencv_contrib -lopencv_core \
