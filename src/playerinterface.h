@@ -24,6 +24,12 @@
 #include "./Image/CVideo.h"
 #include "openglwidget.h"
 
+#include "src/Filter/filtermanager.hpp"
+#include "src/Filter/nofilter.hpp"
+#include "src/Filter/inversefilter.hpp"
+#include "src/Filter/canalfilter.hpp"
+
+
 #define POSITION_RESOLUTION 10000
 
 
@@ -87,6 +93,8 @@ class PlayerInterface : public QWidget
     FastImage *bufferTmp1;
     FastImage *bufferTmp2;
     FastImage *bufferOut;
+
+    FilterManager* filters;
 
 public:
     PlayerInterface();

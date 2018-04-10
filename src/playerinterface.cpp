@@ -39,11 +39,19 @@ PlayerInterface::PlayerInterface()
     QVBoxLayout *l4     = new QVBoxLayout;
     setLayout(layout);
 
+    filters = new FilterManager();
+
+    NoFilter* nof = new NoFilter("None");
+    InverseFilter *invf = new InverseFilter("Inverse");
+
+    filters->addFilter(nof);
+    filters->addFilter(invf);
+
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
     //
-    _listeFiltres->addItem( "None" );
-    _listeFiltres->addItem( "Inverse" );
+    _listeFiltres->addItem( filters->getFilterAt(0)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(1)->getFilterName() );
 
 
     _isPlaying = false;
@@ -238,7 +246,7 @@ void PlayerInterface::drawNextFrame()
     //QString value = _listeFiltres->currentText();
 
     // EN FONCTION DU CHOIX FAIT DANS LA LISTE ON FAIT UN TRUC ?!
-    if( _listeFiltres->currentIndex() == 0 ){
+    /*if( _listeFiltres->currentIndex() == 0 ){
 
         if( bufferOut->width() != bufferIn->width() || bufferOut->height() != bufferIn->height() ){
             bufferOut->resize(bufferIn->height(), bufferIn->width());
@@ -261,7 +269,8 @@ void PlayerInterface::drawNextFrame()
                         }
         }
 
-    }
+    }*/
+    filters->getFilterAt(_listeFiltres->currentIndex())->process(bufferIn, bufferOut);
 
 
     //
