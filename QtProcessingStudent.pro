@@ -16,11 +16,21 @@ QT       += core gui opengl network
 HEADERS += src/playerinterface.h \
     src/openglwidget.h \
     src/Image/FImage.h \
-    src/Image/CVideo.h
+    src/Image/CVideo.h \
+    src/Filter/filter.hpp \
+    src/Filter/canalfilter.hpp \
+    src/Filter/inversefilter.hpp \
+    src/Filter/nofilter.hpp \
+    src/Filter/filtermanager.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
     src/Image/FImage.cpp \
-    src/Image/CVideo.cpp
+    src/Image/CVideo.cpp \
+    src/Filter/filter.cpp \
+    src/Filter/canalfilter.cpp \
+    src/Filter/inversefilter.cpp \
+    src/Filter/nofilter.cpp \
+    src/Filter/filtermanager.cpp
 RESOURCES +=
 FORMS +=
