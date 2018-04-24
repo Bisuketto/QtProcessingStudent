@@ -12,9 +12,9 @@ void NoFilter::process(FastImage* _buffIn, FastImage* _buffOut){
 
     for(int y=0; y<_buffIn->height(); y++){
         for(int x=0; x<_buffIn->width(); x++){
-                _buffOut->Red  (y, x, _buffIn->Red(y,x) );
+                _buffOut->Red  (y, x, _buffIn->Red(y,x)   );
                 _buffOut->Green(y, x, _buffIn->Green(y,x) );
-                _buffOut->Blue (y, x, _buffIn->Blue(y,x) );
+                _buffOut->Blue (y, x, _buffIn->Blue(y,x)  );
         }
     }
 }

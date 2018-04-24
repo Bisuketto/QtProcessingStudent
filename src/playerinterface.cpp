@@ -52,8 +52,13 @@ PlayerInterface::PlayerInterface()
     DownSampleFilterSqr *dsfsqr = new DownSampleFilterSqr("Down Sample (Sqare)");
     AutomaticColorLevelFilter *autocolor = new AutomaticColorLevelFilter("Automatic color leveling");
 
+    SimpleGreyFilter* sgf = new SimpleGreyFilter("Gris Simple");
+    LiableGreyFilter* lgf = new LiableGreyFilter("Gris Fiable");
+
     filters->addFilter(nof);
     filters->addFilter(invf);
+    filters->addFilter(sgf);
+    filters->addFilter(lgf);
     filters->addFilter(cfilterR);
     filters->addFilter(cfilterG);
     filters->addFilter(cfilterB);
@@ -76,6 +81,8 @@ PlayerInterface::PlayerInterface()
     _listeFiltres->addItem( filters->getFilterAt(7)->getFilterName() );
     _listeFiltres->addItem( filters->getFilterAt(8)->getFilterName() );
     _listeFiltres->addItem( filters->getFilterAt(9)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(10)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(11)->getFilterName() );
 
 
     _isPlaying = false;
