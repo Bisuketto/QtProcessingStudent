@@ -21,7 +21,15 @@ HEADERS += src/playerinterface.h \
     src/Filter/canalfilter.hpp \
     src/Filter/inversefilter.hpp \
     src/Filter/nofilter.hpp \
-    src/Filter/filtermanager.hpp
+    src/Filter/filtermanager.hpp \
+    src/Filter/filterr.hpp \
+    src/Filter/filterg.hpp \
+    src/Filter/filterb.hpp \
+    src/Filter/upsamplefilter.hpp \
+    src/Filter/downsamplefilterpick.hpp \
+    src/Filter/downsamplefilterlin.hpp \
+    src/Filter/downsamplefiltersqr.hpp \
+    src/Filter/automaticcolorlevelfilter.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
@@ -31,6 +39,14 @@ SOURCES += src/playerinterface.cpp \
     src/Filter/canalfilter.cpp \
     src/Filter/inversefilter.cpp \
     src/Filter/nofilter.cpp \
-    src/Filter/filtermanager.cpp
+    src/Filter/filtermanager.cpp \
+    src/Filter/filterr.cpp \
+    src/Filter/filterg.cpp \
+    src/Filter/filterb.cpp \
+    src/Filter/upsamplefilter.cpp \
+    src/Filter/downsamplefilterpick.cpp \
+    src/Filter/downsamplefilterlin.cpp \
+    src/Filter/downsamplefiltersqr.cpp \
+    src/Filter/automaticcolorlevelfilter.cpp
 RESOURCES +=
 FORMS +=

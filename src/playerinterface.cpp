@@ -43,15 +43,39 @@ PlayerInterface::PlayerInterface()
 
     NoFilter* nof = new NoFilter("None");
     InverseFilter *invf = new InverseFilter("Inverse");
+    FilterR *cfilterR = new FilterR("Red");
+    FilterG *cfilterG = new FilterG("Green");
+    FilterB *cfilterB = new FilterB("Blue");
+    UpSampleFilter *upsamplef = new UpSampleFilter("Up Sample");
+    DownSampleFilterPick *dsfp = new DownSampleFilterPick("Down Sample (Pick)");
+    DownSampleFilterLin *dsflin = new DownSampleFilterLin("Down Sample (Linear)");
+    DownSampleFilterSqr *dsfsqr = new DownSampleFilterSqr("Down Sample (Sqare)");
+    AutomaticColorLevelFilter *autocolor = new AutomaticColorLevelFilter("Automatic color leveling");
 
     filters->addFilter(nof);
     filters->addFilter(invf);
+    filters->addFilter(cfilterR);
+    filters->addFilter(cfilterG);
+    filters->addFilter(cfilterB);
+    filters->addFilter(upsamplef);
+    filters->addFilter(dsfp);
+    filters->addFilter(dsflin);
+    filters->addFilter(dsfsqr);
+    filters->addFilter(autocolor);
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
     //
     _listeFiltres->addItem( filters->getFilterAt(0)->getFilterName() );
     _listeFiltres->addItem( filters->getFilterAt(1)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(2)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(3)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(4)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(5)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(6)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(7)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(8)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(9)->getFilterName() );
 
 
     _isPlaying = false;
