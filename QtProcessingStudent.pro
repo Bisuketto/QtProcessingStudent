@@ -21,7 +21,10 @@ HEADERS += src/playerinterface.h \
     src/Filter/canalfilter.hpp \
     src/Filter/inversefilter.hpp \
     src/Filter/nofilter.hpp \
-    src/Filter/filtermanager.hpp
+    src/Filter/filtermanager.hpp \
+    src/Filter/greyfilter.hpp \
+    src/Filter/simplegreyfilter.hpp \
+    src/Filter/liablegreyfilter.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
@@ -31,6 +34,9 @@ SOURCES += src/playerinterface.cpp \
     src/Filter/canalfilter.cpp \
     src/Filter/inversefilter.cpp \
     src/Filter/nofilter.cpp \
-    src/Filter/filtermanager.cpp
+    src/Filter/filtermanager.cpp \
+    src/Filter/greyfilter.cpp \
+    src/Filter/simplegreyfilter.cpp \
+    src/Filter/liablegreyfilter.cpp
 RESOURCES +=
 FORMS +=
