@@ -28,7 +28,9 @@
 #include "src/Filter/nofilter.hpp"
 #include "src/Filter/inversefilter.hpp"
 #include "src/Filter/canalfilter.hpp"
-
+#include "src/Filter/greyfilter.hpp"
+#include "src/Filter/liablegreyfilter.hpp"
+#include "src/Filter/simplegreyfilter.hpp"
 
 #define POSITION_RESOLUTION 10000
 

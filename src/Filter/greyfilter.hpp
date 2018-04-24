@@ -3,6 +3,7 @@
 
 #include "filter.hpp"
 
+
 class GreyFilter : public Filter
 {
 public:

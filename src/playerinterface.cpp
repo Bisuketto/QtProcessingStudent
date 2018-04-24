@@ -44,14 +44,21 @@ PlayerInterface::PlayerInterface()
     NoFilter* nof = new NoFilter("None");
     InverseFilter *invf = new InverseFilter("Inverse");
 
+    SimpleGreyFilter* sgf = new SimpleGreyFilter("Gris Simple");
+    LiableGreyFilter* lgf = new LiableGreyFilter("Gris Fiable");
+
     filters->addFilter(nof);
     filters->addFilter(invf);
+    filters->addFilter(sgf);
+    filters->addFilter(lgf);
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
     //
     _listeFiltres->addItem( filters->getFilterAt(0)->getFilterName() );
     _listeFiltres->addItem( filters->getFilterAt(1)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(2)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(3)->getFilterName() );
 
 
     _isPlaying = false;
