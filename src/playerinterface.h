@@ -31,6 +31,14 @@
 #include "src/Filter/greyfilter.hpp"
 #include "src/Filter/liablegreyfilter.hpp"
 #include "src/Filter/simplegreyfilter.hpp"
+#include "src/Filter/filterr.hpp"
+#include "src/Filter/filterg.hpp"
+#include "src/Filter/filterb.hpp"
+#include "src/Filter/upsamplefilter.hpp"
+#include "src/Filter/downsamplefilterpick.hpp"
+#include "src/Filter/downsamplefilterlin.hpp"
+#include "src/Filter/downsamplefiltersqr.hpp"
+#include "src/Filter/automaticcolorlevelfilter.hpp"
 
 #define POSITION_RESOLUTION 10000
 
