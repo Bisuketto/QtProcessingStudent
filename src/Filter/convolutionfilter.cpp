@@ -35,7 +35,7 @@ void ConvolutionFilter::process(FastImage *_buffIn, FastImage *_buffOut)
     }
 }
 
-std::vector<int> ConvolutionFilter::convolutionMatrix( std::vector<int> A, std::vector<int> B)
+int ConvolutionFilter::convolutionMatrix( std::vector<int> A)
 {
 
 }
