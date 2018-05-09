@@ -2,7 +2,6 @@
 #define CANALFILTER_HPP
 
 #include "src/Filter/filter.hpp"
-#include <QDebug>
 
 class CanalFilter : public Filter
 {

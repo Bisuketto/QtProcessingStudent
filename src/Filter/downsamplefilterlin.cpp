@@ -5,7 +5,8 @@ DownSampleFilterLin::DownSampleFilterLin(QString _name) : Filter(_name)
 
 }
 
-void DownSampleFilterLin::process(FastImage* _buffIn, FastImage* _buffOut){
+void DownSampleFilterLin::process(FastImage* _buffIn, FastImage* _buffOut)
+{
     if( _buffOut->width() != _buffIn->width()/2 || _buffOut->height() != _buffIn->height()/2 ){
         _buffOut->resize(_buffIn->height()/2, _buffIn->width()/2);
     }
