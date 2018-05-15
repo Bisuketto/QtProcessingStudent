@@ -1,16 +1,16 @@
-#include "matcross.hpp"
+#include "matcross_D.hpp"
 
-MatCross::MatCross() : ConvolutionFilter()
+MatCross_D::MatCross_D() : ConvolutionFilter()
 {
 
 }
 
-MatCross::MatCross(QString _name, std::vector<int> _matrix) : ConvolutionFilter( _name, _matrix)
+MatCross_D::MatCross_D(QString _name, std::vector<int> _matrix) : ConvolutionFilter( _name, _matrix)
 {
 
 }
 
-int MatCross::convolutionMatrix( std::vector<int> A)
+int MatCross_D::convolutionMatrix( std::vector<int> A)
 {
     int result = 0;
     std::vector<int> _matrix = get_mat();

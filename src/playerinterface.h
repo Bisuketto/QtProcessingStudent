@@ -39,6 +39,8 @@
 #include "src/Filter/downsamplefilterlin.hpp"
 #include "src/Filter/downsamplefiltersqr.hpp"
 #include "src/Filter/automaticcolorlevelfilter.hpp"
+#include "src/Filter/convolutionfilter.hpp"
+#include "src/Filter/m2.hpp"
 
 #define POSITION_RESOLUTION 10000
 

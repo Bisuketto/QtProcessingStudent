@@ -55,6 +55,8 @@ PlayerInterface::PlayerInterface()
     SimpleGreyFilter* sgf = new SimpleGreyFilter("Gris Simple");
     LiableGreyFilter* lgf = new LiableGreyFilter("Gris Fiable");
 
+    M2* lecontourdupauvre = new M2("Unworking");
+
     filters->addFilter(nof);
     filters->addFilter(invf);
     filters->addFilter(sgf);
@@ -67,6 +69,7 @@ PlayerInterface::PlayerInterface()
     filters->addFilter(dsflin);
     filters->addFilter(dsfsqr);
     filters->addFilter(autocolor);
+    filters->addFilter(lecontourdupauvre);
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
@@ -83,6 +86,7 @@ PlayerInterface::PlayerInterface()
     _listeFiltres->addItem( filters->getFilterAt(9)->getFilterName() );
     _listeFiltres->addItem( filters->getFilterAt(10)->getFilterName() );
     _listeFiltres->addItem( filters->getFilterAt(11)->getFilterName() );
+    _listeFiltres->addItem( filters->getFilterAt(12)->getFilterName() );
 
 
     _isPlaying = false;
