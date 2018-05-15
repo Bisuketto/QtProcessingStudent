@@ -2,7 +2,13 @@
 
 ComplexFilter::ComplexFilter(QString _name) : Filter(_name)
 {
+}
 
+ComplexFilter::ComplexFilter(QString _name, Filter **_filters, int _n) : Filter(_name)
+{
+    for(int i = 0; i < _n; i++){
+        addFilter(_filters[i]);
+    }
 }
 
 void ComplexFilter::process(FastImage* _buffIn, FastImage* _buffOut){

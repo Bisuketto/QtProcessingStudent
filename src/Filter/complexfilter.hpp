@@ -2,14 +2,14 @@
 #define COMPLEXFILTER_HPP
 
 #include "filter.hpp"
-#include <vector>
 
 class ComplexFilter : public Filter
 {
 public:
     ComplexFilter(QString _name);
+    ComplexFilter(QString _name, Filter **_filters, int _n);
+    void addFilter(Filter* _toadd);
     void process(FastImage* _buffIn, FastImage* _buffOut);
-    void addFilter(Filter* _toAdd);
 private:
     std::vector<Filter* > filters;
     FastImage* tmp1;

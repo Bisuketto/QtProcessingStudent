@@ -39,6 +39,9 @@
 #include "src/Filter/downsamplefilterlin.hpp"
 #include "src/Filter/downsamplefiltersqr.hpp"
 #include "src/Filter/automaticcolorlevelfilter.hpp"
+#include "src/Filter/motionblurfilter.hpp"
+#include "src/Filter/complexfilter.hpp"
+#include "src/addfilterdialog.hpp"
 
 #define POSITION_RESOLUTION 10000
 
@@ -52,6 +55,7 @@ class PlayerInterface : public QWidget
     QPushButton *pause;
     QPushButton *nextFrame;
     QPushButton *filterFrame;
+    QPushButton *addFilter;
 
     // LABELS UTILISES DANS L'INTERFACE AFIN DE FOURNIR DES INFORMATIONS
     // SUR LES FLUX VIDEO MANIPULES
@@ -111,6 +115,7 @@ public:
     ~PlayerInterface();
 
 public slots:
+    void actionAddFilter();
     //void playFile();
     void openFile(QString* name);
     //void updateInterface();
