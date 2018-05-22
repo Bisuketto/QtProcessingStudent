@@ -33,7 +33,12 @@ HEADERS += src/playerinterface.h \
     src/Filter/filterg.hpp \
     src/Filter/filterr.hpp \
     src/Filter/upsamplefilter.hpp \
-    src/Filter/convolutionfilter.hpp
+    src/Filter/convolutionfilter.hpp \
+    src/Filter/matvpar.hpp \
+    src/Filter/mathpar.hpp \
+    src/Filter/m2.hpp \
+    src/Filter/mat3p3_D.hpp \
+    src/Filter/matcross_D.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
@@ -55,7 +60,12 @@ SOURCES += src/playerinterface.cpp \
     src/Filter/filterg.cpp \
     src/Filter/filterr.cpp \
     src/Filter/upsamplefilter.cpp \
-    src/Filter/convolutionfilter.cpp
+    src/Filter/convolutionfilter.cpp \
+    src/Filter/matvpar.cpp \
+    src/Filter/mathpar.cpp \
+    src/Filter/m2.cpp \
+    src/Filter/mat3p3_D.cpp \
+    src/Filter/matcross_D.cpp
 
 RESOURCES +=
 FORMS +=

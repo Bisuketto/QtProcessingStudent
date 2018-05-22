@@ -5,7 +5,7 @@ Filter::Filter(QString _name){
 }
 
 Filter::Filter(){
-
+    name = "Anonymous";
 }
 
 Filter::~Filter(){
