@@ -189,8 +189,8 @@ int ConvFilter3p3::convolutionMatrix( std::vector<int> A)
     int result = 0;
     for( int i = 0 ; i < 9 ; i++)
     {
-        if (A[i] != 0){
-            result += _matrix[i] * A[i];
+        if (_matrix[i] != 0){
+            result += _matrix[8-i] * A[i];
         }
     }
 

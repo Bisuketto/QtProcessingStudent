@@ -37,20 +37,12 @@ std::vector<int> ConvolutionFilter::get_mat(){
 void ConvolutionFilter::set_mat(const std::vector<int> _matrix)
 {
     if (_matrix.size() != 9){
+        std::cout << "set_mat error" << std::endl;
         exit(EXIT_FAILURE);
     }
 
-    std::vector<int> buff(_matrix);
-    if (buff.size() != 9){
-        exit(EXIT_FAILURE);
-    }
     matrix->clear();
-    while( matrix->size() < 9 )
-    {
-        matrix->push_back(buff.back());
-        buff.pop_back();
-    }
-
+    *matrix = _matrix;
 }
 
 void ConvolutionFilter::process(FastImage *_buffIn, FastImage *_buffOut)

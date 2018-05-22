@@ -35,7 +35,8 @@ HEADERS += src/playerinterface.h \
     src/Filter/upsamplefilter.hpp \
     src/Filter/convolutionfilter.hpp \
     src/Filter/m2.hpp \
-    src/Filter/convfilter3p3.hpp
+    src/Filter/convfilter3p3.hpp \
+    src/Filter/m3.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
@@ -59,7 +60,8 @@ SOURCES += src/playerinterface.cpp \
     src/Filter/upsamplefilter.cpp \
     src/Filter/convolutionfilter.cpp \
     src/Filter/m2.cpp \
-    src/Filter/convfilter3p3.cpp
+    src/Filter/convfilter3p3.cpp \
+    src/Filter/m3.cpp
 
 RESOURCES +=
 FORMS +=
