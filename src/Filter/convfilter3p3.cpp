@@ -16,171 +16,25 @@ void ConvFilter3p3::process(FastImage *_buffIn, FastImage *_buffOut){
         _buffOut->resize(h, w);
     }
 
-    std::vector<int>  buff_img[3]; // DIM(buff_img) = (9,3)
+    int sumr = 0, sumb = 0, sumg = 0;
 
-    ///* Cas y = 0 *///-------------------------------------------------------------------------------------------------------
-    int y = 0;
-
-    // Cas x = 0 -------------------------------------------------------------------------------------------------------------
-    int x = 0;
-
-    reset_buff( buff_img);
-
-    int k = 4;
-    while( k < 9 )
-    {
-        if ( k==5){
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k+=2;
-        } else {
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k++;
-        }
-    }
-
-    _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    // Fin cas x = 0 ---------------------------------------------------------------------------------------------------------
-
-    // Cas général pour x ----------------------------------------------------------------------------------------------------
-    for(x=1; x<(w-1); x++){
-
-        reset_buff( buff_img);
-
-        for ( k = 3; k < 9; k++){
-
-            set_buff_k( buff_img, _buffIn, y, x, k);
-        }
-        _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    }
-    // Fin cas général pour x ------------------------------------------------------------------------------------------------
-
-    // Cas x = w-1 -----------------------------------------------------------------------------------------------------------
-    k=3;
-    reset_buff( buff_img);
-
-    while( k < 8 )
-    {
-        if ( k==4){
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k+=2;
-        } else {
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k++;
-        }
-    }
-    _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    // Fin cas x = w-1 -------------------------------------------------------------------------------------------------------
-
-    ///* Fin cas y = 0 */// --------------------------------------------------------------------------------------------------
-
-    ///* Début cas général pour y */// ---------------------------------------------------------------------------------------
-    for( y=1; y<(h-1); y++){
-
-    // Cas x = 0 -------------------------------------------------------------------------------------------------------------
-        int x = 0;
-        reset_buff( buff_img);
-
-        int k = 1;
-        while( k < 9 )
-        {
-            if (k == 2 || k==5){
-                set_buff_k( buff_img, _buffIn, y, x, k);
-                k+=2;
-            } else {
-                set_buff_k( buff_img, _buffIn, y, x, k);
-                k++;
+    for(int y = 1; y < h - 1; y++){
+        for(int x = 1; x < w - 1; x++){
+            sumr = 0;
+            sumb = 0;
+            sumg = 0;
+            for(int xx = 0; xx < 3; xx++){
+                for(int yy = 0; yy < 3; yy++){
+                    sumr += get_coef(yy,xx)*_buffIn->Red(y - yy +1, x - xx +1);
+                    sumg += get_coef(yy,xx)*_buffIn->Green(y - yy +1, x - xx +1);
+                    sumb += get_coef(yy,xx)*_buffIn->Blue(y - yy +1, x - xx +1);
+                }
             }
-        }
-
-        _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    // Fin cas x = 0 ---------------------------------------------------------------------------------------------------------
-
-    // Cas général pour x ----------------------------------------------------------------------------------------------------
-        for(x=1; x<(w-1); x++){
-
-            reset_buff( buff_img);
-
-            for ( k=0; k < 9; k++){
-
-                set_buff_k( buff_img, _buffIn, y, x, k);
-            }
-            _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-        }
-    // Fin cas général pour x ------------------------------------------------------------------------------------------------
-
-    // Cas x = w-1 -----------------------------------------------------------------------------------------------------------
-        k=0;
-        reset_buff( buff_img);
-
-        while( k < 8 )
-        {
-            if (k == 1 || k==4){
-                set_buff_k( buff_img, _buffIn, y, x, k);
-                k+=2;
-            } else {
-                set_buff_k( buff_img, _buffIn, y, x, k);
-                k++;
-            }
-        }
-    // Fin cas x = w-1 -------------------------------------------------------------------------------------------------------
-
-    }
-    ///* Fin cas général pour y */// -----------------------------------------------------------------------------------------
-
-    ///* Cas y = h-1 */// ----------------------------------------------------------------------------------------------------
-
-    // Cas x = 0 -------------------------------------------------------------------------------------------------------------
-    x = 0;
-
-    reset_buff( buff_img);
-
-    k = 1;
-    while( k < 6 )
-    {
-        if ( k==2){
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k+=2;
-        } else {
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k++;
+            _buffOut->Red(y,x,sumr);
+            _buffOut->Green(y,x,sumg);
+            _buffOut->Blue(y,x,sumb);
         }
     }
-
-    _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    // Fin cas x = 0 ---------------------------------------------------------------------------------------------------------
-
-    // Cas général pour x ----------------------------------------------------------------------------------------------------
-    for(x=1; x<(w-1); x++){
-
-        reset_buff( buff_img);
-
-        for ( k = 0; k < 6; k++){
-
-            set_buff_k( buff_img, _buffIn, y, x, k);
-        }
-        _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    }
-    // Fin cas général pour x ------------------------------------------------------------------------------------------------
-
-    // Cas x = w-1 -----------------------------------------------------------------------------------------------------------
-    k = 0;
-    reset_buff( buff_img);
-
-    while( k < 5 )
-    {
-        if ( k == 1){
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k += 2;
-        } else {
-            set_buff_k( buff_img, _buffIn, y, x, k);
-            k++;
-        }
-    }
-    _buffOut->RGB( y, x, convolutionMatrix( buff_img[R]), convolutionMatrix( buff_img[G]), convolutionMatrix( buff_img[B]));
-    // Fin cas x = w-1 -------------------------------------------------------------------------------------------------------
-
-    ///* Fin cas y = h-1 */// ------------------------------------------------------------------------------------------------
-
 }
 
 int ConvFilter3p3::convolutionMatrix( std::vector<int> A)
@@ -189,10 +43,74 @@ int ConvFilter3p3::convolutionMatrix( std::vector<int> A)
     int result = 0;
     for( int i = 0 ; i < 9 ; i++)
     {
-        if (A[i] != 0){
-            result += _matrix[i] * A[i];
+        if (_matrix[i] != 0){
+            result += _matrix[8-i] * A[i];
         }
     }
 
     return result;
+}
+
+M2::M2() : ConvFilter3p3( "M2",  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
+{
+}
+
+M2::M2( QString _name) : ConvFilter3p3( _name,  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
+{
+}
+
+M3::M3() : ConvFilter3p3( "M2", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M3::M3( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M3::M3() : ConvFilter3p3( "M2", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M3::M3( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M3::M3() : ConvFilter3p3( "M2", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M3::M3( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M6::M6() : ConvFilter3p3( "M6", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M6::M6( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+{
+}
+
+M7::M7() : ConvFilter3p3( "M7", { -1, -1, -1, -1, 8, -1, -1, -1, -1} )
+{
+}
+
+M7::M7( QString _name) : ConvFilter3p3( _name,{ -1, -1, -1, -1, 8, -1, -1, -1, -1} )
+{
+}
+
+M8::M8() : ConvFilter3p3( "M8", { -1,-2,-1,-2,12,-2,-1,-2,-1} )
+{
+}
+
+M8::M8( QString _name) : ConvFilter3p3( _name,{ -1,-2,-1,-2,12,-2,-1,-2,-1} )
+{
+}
+
+M9::M9() : ConvFilter3p3( "M9", { -1, -1, 0, -1, 0, 1, 0, 1, 1} )
+{
+}
+
+M9::M9( QString _name) : ConvFilter3p3( _name,{ -1, -1, 0, -1, 0, 1, 0, 1, 1} )
+{
 }
