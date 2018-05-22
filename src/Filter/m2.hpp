@@ -1,9 +1,9 @@
 #ifndef M2_HPP
 #define M2_HPP
 
-#include "matvpar.hpp"
+#include "convfilter3p3.hpp"
 
-class M2 : public MatVPar
+class M2 : public ConvFilter3p3
 {
 public:
     M2();
