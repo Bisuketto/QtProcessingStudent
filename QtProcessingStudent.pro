@@ -36,7 +36,14 @@ HEADERS += src/playerinterface.h \
     src/Filter/convolutionfilter.hpp \
     src/Filter/detectionfilter3p1.hpp \
     src/Filter/detectionfilter2p1.hpp \
-    src/Filter/detectionfilter3p3.hpp
+    src/Filter/detectionfilter3p3.hpp \
+    src/Filter/complexfilterex4.hpp \
+    src/Filter/complexfilterex3.hpp \
+    src/Filter/complexfilterex2.hpp \
+    src/Filter/complexfilterex1.hpp \
+    src/Filter/complexfilter.hpp \
+    src/Filter/motionblurfilter.hpp \
+    src/addfilterdialog.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
@@ -61,7 +68,14 @@ SOURCES += src/playerinterface.cpp \
     src/Filter/convolutionfilter.cpp \
     src/Filter/detectionfilter3p1.cpp \
     src/Filter/detectionfilter2p1.cpp \
-    src/Filter/detectionfilter3p3.cpp
+    src/Filter/detectionfilter3p3.cpp \
+    src/Filter/complexfilterex4.cpp \
+    src/Filter/complexfilterex3.cpp \
+    src/Filter/complexfilterex2.cpp \
+    src/Filter/complexfilterex1.cpp \
+    src/Filter/motionblurfilter.cpp \
+    src/Filter/complexfilter.cpp \
+    src/addfilterdialog.cpp
 
 RESOURCES +=
 FORMS +=

@@ -18,23 +18,8 @@ private:
 protected:
     void set_mat( std::vector<int> _matrix);
     std::vector<int> get_mat();
-    virtual int convolutionMatrix( std::vector<int> A);
-    inline void set_buff_k(std::vector<int>  buff_img[3], FastImage *_buffIn, int y, int x, int k);
-    inline void reset_buff( std::vector<int>  buff_img[3]);
     int get_coef(int y, int x);
 };
-
-inline void ConvolutionFilter::set_buff_k(std::vector<int>  buff_img[3], FastImage *_buffIn, int y, int x, int k){
-    buff_img[R][k]=_buffIn->Red(y,x);
-    buff_img[G][k]=_buffIn->Green(y,x);
-    buff_img[B][k]=_buffIn->Blue(y,x);
-}
-
-inline void ConvolutionFilter::reset_buff( std::vector<int>  buff_img[3]){
-    buff_img[R] = std::vector<int>(9, 0);
-    buff_img[G] = std::vector<int>(9, 0);
-    buff_img[B] = std::vector<int>(9, 0);// buff_img => (0,0,0,0,0,0,0,0,0)*3
-}
 
 class DetectionFilter : public ConvolutionFilter{
 public:

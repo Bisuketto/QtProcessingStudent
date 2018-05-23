@@ -49,8 +49,3 @@ void ConvolutionFilter::process(FastImage *_buffIn, FastImage *_buffOut)
 
 }
 
-
-int ConvolutionFilter::convolutionMatrix( std::vector<int> A)
-{
-    return 0;
-}
