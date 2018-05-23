@@ -62,6 +62,17 @@ PlayerInterface::PlayerInterface()
     ComplexFilterEx3* cmp3 = new ComplexFilterEx3("Complex Filter 3");
     ComplexFilterEx4* cmp4 = new ComplexFilterEx4("Complex Filter 4");
 
+    M0* lecontourdupauvre0 = new M0("ContourM0");
+    M1* lecontourdupauvre1 = new M1("ContourM1");
+    M2* lecontourdupauvre2 = new M2("ContourM2");
+    M3* lecontourdupauvre3 = new M3("ContourM3");
+    M4* lecontourdupauvre4 = new M4("ContourM4");
+    M5* lecontourdupauvre5 = new M5("ContourM5");
+    M6* lecontourdupauvre6 = new M6("ContourM6");
+    M7* lecontourdupauvre7 = new M7("ContourM7");
+    M8* lecontourdupauvre8 = new M8("ContourM8");
+    M9* lecontourdupauvre9 = new M9("ContourM9");
+
     filters->addFilter(nof);
     filters->addFilter(invf);
     filters->addFilter(sgf);
@@ -74,11 +85,24 @@ PlayerInterface::PlayerInterface()
     filters->addFilter(dsflin);
     filters->addFilter(dsfsqr);
     filters->addFilter(autocolor);
+
+    filters->addFilter(lecontourdupauvre0);
+    filters->addFilter(lecontourdupauvre1);
+    filters->addFilter(lecontourdupauvre2);
+    filters->addFilter(lecontourdupauvre3);
+    filters->addFilter(lecontourdupauvre4);
+    filters->addFilter(lecontourdupauvre5);
+    filters->addFilter(lecontourdupauvre6);
+    filters->addFilter(lecontourdupauvre7);
+    filters->addFilter(lecontourdupauvre8);
+    filters->addFilter(lecontourdupauvre9);
+
     filters->addFilter(mbf);
     filters->addFilter(cmp1);
     filters->addFilter(cmp2);
     filters->addFilter(cmp3);
     filters->addFilter(cmp4);
+
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
@@ -86,6 +110,7 @@ PlayerInterface::PlayerInterface()
 
     for(int i = 0; i < filters->amount(); i++){
         _listeFiltres->addItem( filters->getFilterAt(i)->getFilterName());
+
     }
 
     _isPlaying = false;
