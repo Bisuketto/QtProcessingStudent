@@ -5,6 +5,10 @@ CanalFilter::CanalFilter(QString _name, unsigned int _color_values) : Filter(_na
     color_values = _color_values;
 }
 
+CanalFilter::~CanalFilter(){
+
+}
+
 
 void CanalFilter::process(FastImage* _buffIn, FastImage* _buffOut){
     if( _buffOut->width() != _buffIn->width() || _buffOut->height() != _buffIn->height() ){

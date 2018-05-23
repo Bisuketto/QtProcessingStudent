@@ -7,6 +7,7 @@ class DownSampleFilterPick : public Filter
 {
 public:
     DownSampleFilterPick(QString _name);
+    ~DownSampleFilterPick();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 

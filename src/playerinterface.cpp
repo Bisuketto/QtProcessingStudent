@@ -57,8 +57,10 @@ PlayerInterface::PlayerInterface()
 
     MotionBlurFilter* mbf = new MotionBlurFilter("Motion Blur");
 
-    Filter* complex1[] = {dsfsqr, lgf, mbf};
-    ComplexFilter* cmp1 = new ComplexFilter("Complex Filter Example", complex1, 3);
+    ComplexFilterEx1* cmp1 = new ComplexFilterEx1("Complex Filter 1");
+    ComplexFilterEx2* cmp2 = new ComplexFilterEx2("Complex Filter 2");
+    ComplexFilterEx3* cmp3 = new ComplexFilterEx3("Complex Filter 3");
+    ComplexFilterEx4* cmp4 = new ComplexFilterEx4("Complex Filter 4");
 
     filters->addFilter(nof);
     filters->addFilter(invf);
@@ -74,6 +76,9 @@ PlayerInterface::PlayerInterface()
     filters->addFilter(autocolor);
     filters->addFilter(mbf);
     filters->addFilter(cmp1);
+    filters->addFilter(cmp2);
+    filters->addFilter(cmp3);
+    filters->addFilter(cmp4);
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
@@ -529,7 +534,7 @@ void PlayerInterface::actionAddFilter(){
                     cmpx->addFilter(f);
                     break;
                 case 4:
-                    f = new InverseFilter("Inverse");
+                    f = new UpSampleFilter("UpSample");
                     cmpx->addFilter(f);
                     break;
                 case 5:

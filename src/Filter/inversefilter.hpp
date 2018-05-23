@@ -7,6 +7,7 @@ class InverseFilter : public Filter
 {
 public:
     InverseFilter(QString _name);
+    ~InverseFilter();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 

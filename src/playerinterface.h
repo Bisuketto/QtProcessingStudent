@@ -41,6 +41,10 @@
 #include "src/Filter/automaticcolorlevelfilter.hpp"
 #include "src/Filter/motionblurfilter.hpp"
 #include "src/Filter/complexfilter.hpp"
+#include "src/Filter/complexfilterex1.hpp"
+#include "src/Filter/complexfilterex2.hpp"
+#include "src/Filter/complexfilterex3.hpp"
+#include "src/Filter/complexfilterex4.hpp"
 #include "src/addfilterdialog.hpp"
 
 #define POSITION_RESOLUTION 10000

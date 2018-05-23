@@ -7,6 +7,7 @@ class AutomaticColorLevelFilter : public Filter
 {
 public:
     AutomaticColorLevelFilter(QString _name);
+    ~AutomaticColorLevelFilter();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 

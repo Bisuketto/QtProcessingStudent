@@ -5,6 +5,10 @@ FilterManager::FilterManager()
 
 }
 
+FilterManager::~FilterManager(){
+
+}
+
 Filter* FilterManager::getFilterAt(int i){
     return filters.at(i);
 }

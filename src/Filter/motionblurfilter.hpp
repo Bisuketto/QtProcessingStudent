@@ -7,6 +7,7 @@ class MotionBlurFilter : public Filter
 {
 public:
     MotionBlurFilter(QString _name);
+    ~MotionBlurFilter();
     void process(FastImage* _buffIn, FastImage* _buffOut);
     FastImage* buffTemp[2];
 };

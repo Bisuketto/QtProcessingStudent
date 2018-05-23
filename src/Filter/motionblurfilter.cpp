@@ -6,6 +6,11 @@ MotionBlurFilter::MotionBlurFilter(QString _name) : Filter(_name)
     buffTemp[1] = new FastImage(2, 2);
 }
 
+MotionBlurFilter::~MotionBlurFilter(){
+    delete buffTemp[0];
+    delete buffTemp[1];
+}
+
 void MotionBlurFilter::process(FastImage* _buffIn, FastImage* _buffOut){
     if( _buffOut->width() != _buffIn->width() || _buffOut->height() != _buffIn->height() ){
         _buffOut->resize(_buffIn->height(), _buffIn->width());

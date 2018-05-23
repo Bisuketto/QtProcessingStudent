@@ -43,6 +43,10 @@ AddFilterDialog::AddFilterDialog(QString* _name, char* _filterstoadd, int* _n, Q
     connect(validate, SIGNAL(clicked()), this, SLOT(createfilter()));
 }
 
+AddFilterDialog::~AddFilterDialog(){
+
+}
+
 void AddFilterDialog::addfilter(){
     if(n <= MAX_FILTERS){
         dispFilters->insertPlainText(listesFiltres->currentText() + "\n");

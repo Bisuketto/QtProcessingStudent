@@ -7,6 +7,7 @@ class NoFilter : public Filter
 {
 public:
     NoFilter(QString _name);
+    ~NoFilter();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 

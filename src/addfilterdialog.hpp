@@ -16,6 +16,7 @@ class AddFilterDialog : public QDialog
     Q_OBJECT
 public:
     AddFilterDialog(QString* _name, char* _filterstoadd, int* _n, QWidget * parent = 0, Qt::WindowFlags f = 0);
+    ~AddFilterDialog();
 public slots:
     void addfilter();
     void createfilter();
