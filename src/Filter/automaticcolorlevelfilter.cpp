@@ -5,6 +5,10 @@ AutomaticColorLevelFilter::AutomaticColorLevelFilter(QString _name) : Filter(_na
 
 }
 
+AutomaticColorLevelFilter::~AutomaticColorLevelFilter(){
+
+}
+
 void AutomaticColorLevelFilter::process(FastImage* _buffIn, FastImage* _buffOut){
     if( _buffOut->width() != _buffIn->width() || _buffOut->height() != _buffIn->height() ){
         _buffOut->resize(_buffIn->height(), _buffIn->width());

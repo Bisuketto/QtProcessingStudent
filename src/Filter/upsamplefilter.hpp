@@ -7,6 +7,7 @@ class UpSampleFilter : public Filter
 {
 public:
     UpSampleFilter(QString _name);
+    ~UpSampleFilter();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 

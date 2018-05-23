@@ -8,6 +8,7 @@ class DownSampleFilterLin : public Filter
 {
 public:
     DownSampleFilterLin(QString _name);
+    ~DownSampleFilterLin();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 

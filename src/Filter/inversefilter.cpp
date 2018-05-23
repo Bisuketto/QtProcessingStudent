@@ -5,6 +5,10 @@ InverseFilter::InverseFilter(QString _name) : Filter(_name)
 
 }
 
+InverseFilter::~InverseFilter(){
+
+}
+
 void InverseFilter::process(FastImage* _buffIn, FastImage* _buffOut){
     if( _buffOut->width() != _buffIn->width() || _buffOut->height() != _buffIn->height() ){
         _buffOut->resize(_buffIn->height(), _buffIn->width());

@@ -9,8 +9,10 @@ class FilterManager
 {
 public:
     FilterManager();
+    ~FilterManager();
     Filter* getFilterAt(int i);
     void addFilter(Filter* _ftoadd);
+    int amount();
 private:
     std::vector<Filter* > filters;
 };
