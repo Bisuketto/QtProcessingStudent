@@ -1,8 +1,0 @@
-#ifndef M3_HPP
-#define M3_HPP
-
-#include "convfilter3p3.hpp"
-
-
-
-#endif // M3_HPP

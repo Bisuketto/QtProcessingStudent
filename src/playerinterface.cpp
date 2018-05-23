@@ -55,7 +55,14 @@ PlayerInterface::PlayerInterface()
     SimpleGreyFilter* sgf = new SimpleGreyFilter("Gris Simple");
     LiableGreyFilter* lgf = new LiableGreyFilter("Gris Fiable");
 
-    M2* lecontourdupauvre = new M2("Unworking");
+    M2* lecontourdupauvre2 = new M2("ContourM2");
+    M3* lecontourdupauvre3 = new M3("ContourM3");
+    M4* lecontourdupauvre4 = new M4("ContourM4");
+    M5* lecontourdupauvre5 = new M5("ContourM5");
+    M6* lecontourdupauvre6 = new M6("ContourM6");
+    M7* lecontourdupauvre7 = new M7("ContourM7");
+    M8* lecontourdupauvre8 = new M8("ContourM8");
+    M9* lecontourdupauvre9 = new M9("ContourM9");
 
     filters->addFilter(nof);
     filters->addFilter(invf);
@@ -69,25 +76,22 @@ PlayerInterface::PlayerInterface()
     filters->addFilter(dsflin);
     filters->addFilter(dsfsqr);
     filters->addFilter(autocolor);
-    filters->addFilter(lecontourdupauvre);
+    filters->addFilter(lecontourdupauvre2);
+    filters->addFilter(lecontourdupauvre3);
+    filters->addFilter(lecontourdupauvre4);
+    filters->addFilter(lecontourdupauvre5);
+    filters->addFilter(lecontourdupauvre6);
+    filters->addFilter(lecontourdupauvre7);
+    filters->addFilter(lecontourdupauvre8);
+    filters->addFilter(lecontourdupauvre9);
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
     //
-    _listeFiltres->addItem( filters->getFilterAt(0)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(1)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(2)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(3)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(4)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(5)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(6)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(7)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(8)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(9)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(10)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(11)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(12)->getFilterName() );
 
+    for ( int i = 0 ; i < 20 ; i++){
+        _listeFiltres->addItem( filters->getFilterAt(i)->getFilterName() );
+    }
 
     _isPlaying = false;
 

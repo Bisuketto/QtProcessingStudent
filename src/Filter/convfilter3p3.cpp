@@ -59,7 +59,7 @@ M2::M2( QString _name) : ConvFilter3p3( _name,  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
 {
 }
 
-M3::M3() : ConvFilter3p3( "M2", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M3::M3() : ConvFilter3p3( "M3", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
 {
 }
 
@@ -67,27 +67,27 @@ M3::M3( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
 {
 }
 
-M3::M3() : ConvFilter3p3( "M2", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M4::M4() : ConvFilter3p3( "M4", { -1, -2, -1, 0, 0, 0, 1, 2, 1} )
 {
 }
 
-M3::M3( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M4::M4( QString _name) : ConvFilter3p3( _name,{ -1, -2, -1, 0, 0, 0, 1, 2, 1} )
 {
 }
 
-M3::M3() : ConvFilter3p3( "M2", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M5::M5() : ConvFilter3p3( "M5", { -1, -1, -1, 0, 0, 0, 1, 1, 1} )
 {
 }
 
-M3::M3( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M5::M5( QString _name) : ConvFilter3p3( _name,{ -1, -1, -1, 0, 0, 0, 1, 1, 1} )
 {
 }
 
-M6::M6() : ConvFilter3p3( "M6", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M6::M6() : ConvFilter3p3( "M6", { 0, -1, 0, -1, 4, -1, 0, -1, 0} )
 {
 }
 
-M6::M6( QString _name) : ConvFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+M6::M6( QString _name) : ConvFilter3p3( _name,{ 0, -1, 0, -1, 4, -1, 0, -1, 0} )
 {
 }
 
