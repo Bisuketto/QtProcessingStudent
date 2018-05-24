@@ -1,0 +1,95 @@
+#include "pow2normblurfilter.hpp"
+
+Pow2NormBlurFilter::Pow2NormBlurFilter() : BlurFilter()
+{
+
+}
+
+Pow2NormBlurFilter::Pow2NormBlurFilter( QString _name, std::vector<int> _matrix) : BlurFilter( _name, _matrix)
+{
+
+}
+
+Pow2NormBlurFilter::Pow2NormBlurFilter( QString _name, std::vector<int> _matrix, int _norm) : BlurFilter( _name, _matrix, _norm)
+{
+
+}
+
+void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
+{
+    int w = _buffIn->width(), h = _buffIn->height();
+    if( _buffOut->width() != w || _buffOut->height() != h ){
+        _buffOut->resize(h, w);
+    }
+    int shift = 0, buff = get_norm();
+
+    while (buff != 0){
+        buff = buff >> 1;
+        shift++;
+    }
+
+    int sumr = 0, sumb = 0, sumg = 0;
+
+    for(int y = 1; y < h - 1; y++){
+        for(int x = 1; x < w - 1; x++){
+            sumr = 0;
+            sumb = 0;
+            sumg = 0;
+            for(int xx = 0; xx < 3; xx++){
+                for(int yy = 0; yy < 3; yy++){
+                    sumr += get_coef(yy,xx)*_buffIn->Red(y - yy +1, x - xx +1);
+                    sumg += get_coef(yy,xx)*_buffIn->Green(y - yy +1, x - xx +1);
+                    sumb += get_coef(yy,xx)*_buffIn->Blue(y - yy +1, x - xx +1);
+                }
+            }
+
+            sumr >>= shift-1;
+            sumb >>= shift-1;
+            sumg >>= shift-1;
+
+            /*
+            sumr = (int)( ((double)sumr)/((double)get_norm()) );
+            sumb = (int)( ((double)sumb)/((double)get_norm()) );
+            sumg = (int)( ((double)sumg)/((double)get_norm()) );
+            */
+            _buffOut->Red(y,x,sumr);
+            _buffOut->Green(y,x,sumg);
+            _buffOut->Blue(y,x,sumb);
+        }
+    }
+}
+
+B0::B0() : Pow2NormBlurFilter( "B0", { 0, 1, 0, 1, 4, 1, 0, 1, 0}, 8)
+{
+}
+
+B0::B0( QString _name) : Pow2NormBlurFilter( _name, { 0, 1, 0, 1, 4, 1, 0, 1, 0}, 8)
+{
+}
+
+B1::B1() : Pow2NormBlurFilter( "B1", { 1, 2, 1, 2, 8, 2, 1, 2, 1}, 16)
+{
+}
+
+B1::B1( QString _name) : Pow2NormBlurFilter( _name, { 1, 2, 1, 2, 8, 2, 1, 2, 1}, 16)
+{
+}
+
+B3::B3() : Pow2NormBlurFilter( "B3", { 1, 1, 1, 1, 0, 1, 1, 1, 1}, 8)
+{
+}
+
+B3::B3( QString _name) : Pow2NormBlurFilter( _name, { 1, 1, 1, 1, 0, 1, 1, 1, 1}, 8)
+{
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -73,6 +73,10 @@ PlayerInterface::PlayerInterface()
     M8* lecontourdupauvre8 = new M8("ContourM8");
     M9* lecontourdupauvre9 = new M9("ContourM9");
 
+    B0* lefloudupauvre0    = new B0("FlouB0");
+    B1* lefloudupauvre1    = new B1("FlouB1");
+    B3* lefloudupauvre3    = new B3("FlouB3");
+
     filters->addFilter(nof);
     filters->addFilter(invf);
     filters->addFilter(sgf);
@@ -96,6 +100,10 @@ PlayerInterface::PlayerInterface()
     filters->addFilter(lecontourdupauvre7);
     filters->addFilter(lecontourdupauvre8);
     filters->addFilter(lecontourdupauvre9);
+
+    filters->addFilter(lefloudupauvre0);
+    filters->addFilter(lefloudupauvre1);
+    filters->addFilter(lefloudupauvre3);
 
     filters->addFilter(mbf);
     filters->addFilter(cmp1);

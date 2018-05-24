@@ -19,6 +19,7 @@ protected:
     void set_mat( std::vector<int> _matrix);
     std::vector<int> get_mat();
     int get_coef(int y, int x);
+
 };
 
 class DetectionFilter : public ConvolutionFilter{
@@ -32,6 +33,14 @@ class BlurFilter : public ConvolutionFilter{
 public:
   BlurFilter();
   BlurFilter( QString _name, std::vector<int> _matrix);
+  BlurFilter( QString _name, std::vector<int> _matrix, int _norm);
   ~BlurFilter();
+  int get_norm();
+private:
+  int * norm;
+protected:
+  void set_norm( int _n);
+  int calc_norm();
+  void calc_set_norm();
 };
 #endif // CONVOLUTIONFILTER_HPP
