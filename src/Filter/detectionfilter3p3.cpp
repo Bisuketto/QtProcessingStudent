@@ -25,9 +25,20 @@ void DetectionFilter3p3::process(FastImage *_buffIn, FastImage *_buffOut){
             sumg = 0;
             for(int xx = 0; xx < 3; xx++){
                 for(int yy = 0; yy < 3; yy++){
-                    sumr += get_coef(yy,xx)*_buffIn->Red(y - yy +1, x - xx +1);
-                    sumg += get_coef(yy,xx)*_buffIn->Green(y - yy +1, x - xx +1);
-                    sumb += get_coef(yy,xx)*_buffIn->Blue(y - yy +1, x - xx +1);
+                    int coef = get_coef( yy, xx);
+                    if ( coef == 1 ){
+                        sumr += _buffIn->Red(y - yy +1, x - xx +1);
+                        sumg += _buffIn->Green(y - yy +1, x - xx +1);
+                        sumb += _buffIn->Blue(y - yy +1, x - xx +1);
+                    }else if ( coef == -1){
+                        sumr -= _buffIn->Red(y - yy +1, x - xx +1);
+                        sumg -= _buffIn->Green(y - yy +1, x - xx +1);
+                        sumb -= _buffIn->Blue(y - yy +1, x - xx +1);
+                    }else if (coef != 0 ){
+                        sumr += coef*_buffIn->Red(y - yy +1, x - xx +1);
+                        sumg += coef*_buffIn->Green(y - yy +1, x - xx +1);
+                        sumb += coef*_buffIn->Blue(y - yy +1, x - xx +1);
+                    }
                 }
             }
             _buffOut->Red(y,x,sumr);
@@ -35,20 +46,6 @@ void DetectionFilter3p3::process(FastImage *_buffIn, FastImage *_buffOut){
             _buffOut->Blue(y,x,sumb);
         }
     }
-}
-
-int DetectionFilter3p3::convolutionMatrix( std::vector<int> A)
-{
-    std::vector<int> _matrix(get_mat());
-    int result = 0;
-    for( int i = 0 ; i < 9 ; i++)
-    {
-        if (_matrix[i] != 0){
-            result += _matrix[8-i] * A[i];
-        }
-    }
-
-    return result;
 }
 
 M2::M2() : DetectionFilter3p3( "M2",  { -1, 0, 1, -2, 0, 2, -1, 0, 1})

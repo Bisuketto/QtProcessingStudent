@@ -46,9 +46,20 @@ void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
             sumg = 0;
             for(int xx = 0; xx < 3; xx++){
                 for(int yy = 0; yy < 3; yy++){
-                    sumr += get_coef(yy,xx)*_buffIn->Red(y - yy +1, x - xx +1);
-                    sumg += get_coef(yy,xx)*_buffIn->Green(y - yy +1, x - xx +1);
-                    sumb += get_coef(yy,xx)*_buffIn->Blue(y - yy +1, x - xx +1);
+                    int coef = get_coef( yy, xx);
+                    if ( coef == 1 ){
+                        sumr += _buffIn->Red(y - yy +1, x - xx +1);
+                        sumg += _buffIn->Green(y - yy +1, x - xx +1);
+                        sumb += _buffIn->Blue(y - yy +1, x - xx +1);
+                    }else if ( coef == -1){
+                        sumr -= _buffIn->Red(y - yy +1, x - xx +1);
+                        sumg -= _buffIn->Green(y - yy +1, x - xx +1);
+                        sumb -= _buffIn->Blue(y - yy +1, x - xx +1);
+                    }else if (coef != 0 ){
+                        sumr += coef*_buffIn->Red(y - yy +1, x - xx +1);
+                        sumg += coef*_buffIn->Green(y - yy +1, x - xx +1);
+                        sumb += coef*_buffIn->Blue(y - yy +1, x - xx +1);
+                    }
                 }
             }
 

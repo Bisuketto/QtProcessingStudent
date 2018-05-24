@@ -9,8 +9,6 @@ public:
     DetectionFilter3p3();
     DetectionFilter3p3(QString _name, std::vector<int> _matrix);
     void process(FastImage *_buffIn, FastImage *_buffOut);
-private:
-    int convolutionMatrix(std::vector<int> A);
 };
 
 class M2 : public DetectionFilter3p3
