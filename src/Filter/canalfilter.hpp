@@ -7,6 +7,7 @@ class CanalFilter : public Filter
 {
 public:
     CanalFilter(QString _name, unsigned int _color_values);
+    ~CanalFilter();
     void process(FastImage* _buffIn, FastImage* _buffOut);
 private:
     unsigned int color_values;

@@ -49,13 +49,29 @@ PlayerInterface::PlayerInterface()
     UpSampleFilter *upsamplef = new UpSampleFilter("Up Sample");
     DownSampleFilterPick *dsfp = new DownSampleFilterPick("Down Sample (Pick)");
     DownSampleFilterLin *dsflin = new DownSampleFilterLin("Down Sample (Linear)");
-    DownSampleFilterSqr *dsfsqr = new DownSampleFilterSqr("Down Sample (Sqare)");
+    DownSampleFilterSqr *dsfsqr = new DownSampleFilterSqr("Down Sample (Square)");
     AutomaticColorLevelFilter *autocolor = new AutomaticColorLevelFilter("Automatic color leveling");
 
-    SimpleGreyFilter* sgf = new SimpleGreyFilter("Gris Simple");
-    LiableGreyFilter* lgf = new LiableGreyFilter("Gris Fiable");
+    SimpleGreyFilter* sgf = new SimpleGreyFilter("Simple Gray");
+    LiableGreyFilter* lgf = new LiableGreyFilter("Liable Gray");
 
-    M2* lecontourdupauvre = new M2("Unworking");
+    MotionBlurFilter* mbf = new MotionBlurFilter("Motion Blur");
+
+    ComplexFilterEx1* cmp1 = new ComplexFilterEx1("Complex Filter 1");
+    ComplexFilterEx2* cmp2 = new ComplexFilterEx2("Complex Filter 2");
+    ComplexFilterEx3* cmp3 = new ComplexFilterEx3("Complex Filter 3");
+    ComplexFilterEx4* cmp4 = new ComplexFilterEx4("Complex Filter 4");
+
+    M0* lecontourdupauvre0 = new M0("ContourM0");
+    M1* lecontourdupauvre1 = new M1("ContourM1");
+    M2* lecontourdupauvre2 = new M2("ContourM2");
+    M3* lecontourdupauvre3 = new M3("ContourM3");
+    M4* lecontourdupauvre4 = new M4("ContourM4");
+    M5* lecontourdupauvre5 = new M5("ContourM5");
+    M6* lecontourdupauvre6 = new M6("ContourM6");
+    M7* lecontourdupauvre7 = new M7("ContourM7");
+    M8* lecontourdupauvre8 = new M8("ContourM8");
+    M9* lecontourdupauvre9 = new M9("ContourM9");
 
     filters->addFilter(nof);
     filters->addFilter(invf);
@@ -69,25 +85,33 @@ PlayerInterface::PlayerInterface()
     filters->addFilter(dsflin);
     filters->addFilter(dsfsqr);
     filters->addFilter(autocolor);
-    filters->addFilter(lecontourdupauvre);
+
+    filters->addFilter(lecontourdupauvre0);
+    filters->addFilter(lecontourdupauvre1);
+    filters->addFilter(lecontourdupauvre2);
+    filters->addFilter(lecontourdupauvre3);
+    filters->addFilter(lecontourdupauvre4);
+    filters->addFilter(lecontourdupauvre5);
+    filters->addFilter(lecontourdupauvre6);
+    filters->addFilter(lecontourdupauvre7);
+    filters->addFilter(lecontourdupauvre8);
+    filters->addFilter(lecontourdupauvre9);
+
+    filters->addFilter(mbf);
+    filters->addFilter(cmp1);
+    filters->addFilter(cmp2);
+    filters->addFilter(cmp3);
+    filters->addFilter(cmp4);
+
 
     //
     // DECLARATION DE TOUS LES PLUGINS DE TRAITEMENT VIDEO
     //
-    _listeFiltres->addItem( filters->getFilterAt(0)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(1)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(2)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(3)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(4)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(5)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(6)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(7)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(8)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(9)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(10)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(11)->getFilterName() );
-    _listeFiltres->addItem( filters->getFilterAt(12)->getFilterName() );
 
+    for(int i = 0; i < filters->amount(); i++){
+        _listeFiltres->addItem( filters->getFilterAt(i)->getFilterName());
+
+    }
 
     _isPlaying = false;
 
@@ -104,6 +128,7 @@ PlayerInterface::PlayerInterface()
     nextFrame   = new QPushButton( "Next Frame", this );
     pause       = new QPushButton( "Switch to camera", this );
     filterFrame = new QPushButton( "Limit 24fps", this );
+    addFilter   = new QPushButton( "Add new filter", this);
 
     pause->setEnabled( false );
     start->setEnabled( false );
@@ -114,6 +139,7 @@ PlayerInterface::PlayerInterface()
     QGroupBox   *g1 = new QGroupBox(tr("Filter processing"));
     QVBoxLayout *fp = new QVBoxLayout;
     fp->addWidget(_listeFiltres);
+    fp->addWidget(addFilter);
     g1->setLayout(fp);
 
     QGroupBox   *g2 = new QGroupBox(tr("Action commands"));
@@ -196,6 +222,7 @@ PlayerInterface::PlayerInterface()
     connect(nextFrame,      SIGNAL(clicked()),       this, SLOT(stepOneFrame())     );
     connect(filterFrame,    SIGNAL(clicked()),       this, SLOT(unlockFrameRate())  );
     connect(_listeFiltres,  SIGNAL(activated(int)),  this, SLOT(changePosition(int)));
+    connect(addFilter,      SIGNAL(clicked()),       this, SLOT(actionAddFilter())  );
 
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     updateGeometry();
@@ -501,4 +528,71 @@ void PlayerInterface::stepOneFrame(){
 //
 void PlayerInterface::resetFilters(){
     _listeFiltres->setCurrentIndex(0);
+}
+
+void PlayerInterface::actionAddFilter(){
+    QString* name = new QString;
+    char filterstoadd[MAX_FILTERS];
+    int n = 0;
+    AddFilterDialog dialog(name, filterstoadd, &n, this);
+    dialog.exec();
+    cout << n << " Filters in : "<< name->toStdString() << " created" << endl;
+    if( (n > 0) && (name->length() != 0)){
+        ComplexFilter* cmpx = new ComplexFilter(*name);
+        Filter* f;
+        for(int i = 0; i < n; i++){
+            switch(filterstoadd[i]){
+                case 0:
+                    f = new InverseFilter("Inverse");
+                    cmpx->addFilter(f);
+                    break;
+                case 1:
+                    f = new FilterR("Red");
+                    cmpx->addFilter(f);
+                    break;
+                case 2:
+                    f = new FilterG("Green");
+                    cmpx->addFilter(f);
+                    break;
+                case 3:
+                    f = new FilterB("Blue");
+                    cmpx->addFilter(f);
+                    break;
+                case 4:
+                    f = new UpSampleFilter("UpSample");
+                    cmpx->addFilter(f);
+                    break;
+                case 5:
+                    f = new DownSampleFilterPick("DownSample");
+                    cmpx->addFilter(f);
+                    break;
+                case 6:
+                    f = new DownSampleFilterLin("DownSample");
+                    cmpx->addFilter(f);
+                    break;
+                case 7:
+                    f = new DownSampleFilterSqr("DownSample");
+                    cmpx->addFilter(f);
+                    break;
+                case 8:
+                    f = new AutomaticColorLevelFilter("AutoColor");
+                    cmpx->addFilter(f);
+                    break;
+                case 9:
+                    f = new SimpleGreyFilter("SimpleGrey");
+                    cmpx->addFilter(f);
+                    break;
+                case 10:
+                    f = new LiableGreyFilter("LiableGrey");
+                    cmpx->addFilter(f);
+                    break;
+                case 11:
+                    f = new MotionBlurFilter("MotionBlur");
+                    cmpx->addFilter(f);
+                    break;
+            }
+        }
+        filters->addFilter(cmpx);
+        _listeFiltres->addItem(filters->getFilterAt(filters->amount()-1)->getFilterName());
+    }
 }

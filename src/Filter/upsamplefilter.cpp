@@ -5,6 +5,10 @@ UpSampleFilter::UpSampleFilter(QString _name) : Filter(_name)
 
 }
 
+UpSampleFilter::~UpSampleFilter(){
+
+}
+
 void UpSampleFilter::process(FastImage* _buffIn, FastImage* _buffOut){
     if( _buffOut->width() != _buffIn->width()*2 || _buffOut->height() != _buffIn->height()*2 ){
         _buffOut->resize(_buffIn->height()*2, _buffIn->width()*2);
