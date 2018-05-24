@@ -17,6 +17,7 @@ class B2 : public NotPow2NormBlurFilter
 public:
     B2();
     B2( QString _name);
+    void process(FastImage *_buffIn, FastImage *_buffOut);
 };
 
 #endif // NOTPOW2NORMBLURFILTER_H
