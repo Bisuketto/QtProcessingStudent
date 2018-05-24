@@ -3,6 +3,7 @@
 
 #include "complexfilter.hpp"
 #include "downsamplefilterpick.hpp"
+#include "detectionfilter3p3.hpp"
 
 class ComplexFilterEx2 : public ComplexFilter
 {
