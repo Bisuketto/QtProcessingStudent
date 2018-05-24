@@ -44,7 +44,8 @@ HEADERS += src/playerinterface.h \
     src/Filter/complexfilter.hpp \
     src/Filter/motionblurfilter.hpp \
     src/addfilterdialog.hpp \
-    src/Filter/pow2normblurfilter.hpp
+    src/Filter/pow2normblurfilter.hpp \
+    src/Filter/notpow2normblurfilter.hpp
 SOURCES += src/playerinterface.cpp \
     src/openglwidget.cpp \
     src/main.cpp \
@@ -77,7 +78,8 @@ SOURCES += src/playerinterface.cpp \
     src/Filter/motionblurfilter.cpp \
     src/Filter/complexfilter.cpp \
     src/addfilterdialog.cpp \
-    src/Filter/pow2normblurfilter.cpp
+    src/Filter/pow2normblurfilter.cpp \
+    src/Filter/notpow2normblurfilter.cpp
 
 RESOURCES +=
 FORMS +=

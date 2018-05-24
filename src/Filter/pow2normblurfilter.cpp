@@ -1,18 +1,33 @@
 #include "pow2normblurfilter.hpp"
 
+int Pow2NormBlurFilter::get_shift()
+{
+    return shift;
+}
+
+void Pow2NormBlurFilter::set_shift()
+{
+    shift = 0;
+    int buff = get_norm();
+    while (buff > 1){
+        buff >>= 1;
+        shift += 1;
+    }
+}
+
 Pow2NormBlurFilter::Pow2NormBlurFilter() : BlurFilter()
 {
-
+    shift = 0;
 }
 
 Pow2NormBlurFilter::Pow2NormBlurFilter( QString _name, std::vector<int> _matrix) : BlurFilter( _name, _matrix)
 {
-
+    set_shift();
 }
 
 Pow2NormBlurFilter::Pow2NormBlurFilter( QString _name, std::vector<int> _matrix, int _norm) : BlurFilter( _name, _matrix, _norm)
 {
-
+    set_shift();
 }
 
 void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
@@ -21,13 +36,6 @@ void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
     if( _buffOut->width() != w || _buffOut->height() != h ){
         _buffOut->resize(h, w);
     }
-    int shift = 0, buff = get_norm();
-
-    while (buff > 1){
-        buff = buff >> 1;
-        shift++;
-    }
-
 
     int sumr = 0, sumb = 0, sumg = 0;
 

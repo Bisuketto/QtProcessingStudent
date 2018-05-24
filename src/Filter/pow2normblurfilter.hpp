@@ -10,6 +10,11 @@ public:
     Pow2NormBlurFilter( QString _name, std::vector<int> _matrix);
     Pow2NormBlurFilter( QString _name, std::vector<int> _matrix, int _norm);
     void process(FastImage* _buffIn, FastImage* _buffOut);
+    int get_shift();
+private:
+    int shift;
+protected:
+    void set_shift();
 };
 
 class B0 : public Pow2NormBlurFilter

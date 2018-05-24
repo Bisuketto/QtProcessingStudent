@@ -44,6 +44,7 @@
 #include "src/Filter/detectionfilter3p1.hpp"
 #include "src/Filter/detectionfilter2p1.hpp"
 #include "src/Filter/pow2normblurfilter.hpp"
+#include "src/Filter/notpow2normblurfilter.hpp"
 #include "src/Filter/motionblurfilter.hpp"
 #include "src/Filter/complexfilter.hpp"
 #include "src/Filter/complexfilterex1.hpp"
