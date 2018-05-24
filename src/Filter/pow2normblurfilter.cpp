@@ -23,10 +23,11 @@ void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
     }
     int shift = 0, buff = get_norm();
 
-    while (buff != 0){
+    while (buff > 1){
         buff = buff >> 1;
         shift++;
     }
+
 
     int sumr = 0, sumb = 0, sumg = 0;
 
@@ -43,9 +44,9 @@ void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
                 }
             }
 
-            sumr >>= shift-1;
-            sumb >>= shift-1;
-            sumg >>= shift-1;
+            sumr >>= shift;
+            sumb >>= shift;
+            sumg >>= shift;
 
             /*
             sumr = (int)( ((double)sumr)/((double)get_norm()) );
