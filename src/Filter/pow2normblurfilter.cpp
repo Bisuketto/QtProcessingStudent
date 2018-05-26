@@ -67,11 +67,6 @@ void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
             sumb >>= shift;
             sumg >>= shift;
 
-            /*
-            sumr = (int)( ((double)sumr)/((double)get_norm()) );
-            sumb = (int)( ((double)sumb)/((double)get_norm()) );
-            sumg = (int)( ((double)sumg)/((double)get_norm()) );
-            */
             _buffOut->Red(y,x,sumr);
             _buffOut->Green(y,x,sumg);
             _buffOut->Blue(y,x,sumb);
