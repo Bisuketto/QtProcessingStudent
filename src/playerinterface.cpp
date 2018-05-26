@@ -600,6 +600,63 @@ void PlayerInterface::actionAddFilter(){
                     f = new MotionBlurFilter("MotionBlur");
                     cmpx->addFilter(f);
                     break;
+                case 12:
+                    f = new DetectionM0("Detection M0");
+                    cmpx->addFilter(f);
+                    break;
+                case 13:
+                    f = new DetectionM1("Detection M1");
+                    cmpx->addFilter(f);
+                    break;
+                case 14:
+                    f = new DetectionM2("Detection M2");
+                    cmpx->addFilter(f);
+                    break;
+                case 15:
+                    f = new DetectionM3("Detection M3");
+                    cmpx->addFilter(f);
+                    break;
+                case 16:
+                    f = new DetectionM4("Detection M4");
+                    cmpx->addFilter(f);
+                    break;
+                case 17:
+                    f = new DetectionM5("Detection M5");
+                    cmpx->addFilter(f);
+                    break;
+                case 18:
+                    f = new DetectionM6("Detection M6");
+                    cmpx->addFilter(f);
+                    break;
+                case 19:
+                    f = new DetectionM7("Detection M7");
+                    cmpx->addFilter(f);
+                    break;
+                case 20:
+                    f = new DetectionM8("Detection M8");
+                    cmpx->addFilter(f);
+                    break;
+                case 21:
+                    f = new DetectionM9("Detection M9");
+                    cmpx->addFilter(f);
+                    break;
+                case 22:
+                    f = new BlurB0("Blur B0");
+                    cmpx->addFilter(f);
+                    break;
+                case 23:
+                    f = new BlurB1("Blur B1");
+                    cmpx->addFilter(f);
+                    break;
+                case 24:
+                    f = new BlurB2("Blur B2");
+                    cmpx->addFilter(f);
+                    break;
+                case 25:
+                    f = new BlurB3("Blur B3");
+                    cmpx->addFilter(f);
+                    break;
+
             }
         }
         filters->addFilter(cmpx);

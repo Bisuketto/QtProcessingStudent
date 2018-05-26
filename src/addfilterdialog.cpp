@@ -26,6 +26,23 @@ AddFilterDialog::AddFilterDialog(QString* _name, char* _filterstoadd, int* _n, Q
     listesFiltres->addItem("Liable Grey");
     listesFiltres->addItem("MotionBlur");
 
+    listesFiltres->addItem("Detection M0");
+    listesFiltres->addItem("Detection M1");
+    listesFiltres->addItem("Detection M2");
+    listesFiltres->addItem("Detection M3");
+    listesFiltres->addItem("Detection M4");
+    listesFiltres->addItem("Detection M5");
+    listesFiltres->addItem("Detection M6");
+    listesFiltres->addItem("Detection M7");
+    listesFiltres->addItem("Detection M8");
+    listesFiltres->addItem("Detection M9");
+
+    listesFiltres->addItem("Blur B0");
+    listesFiltres->addItem("Blur B1");
+    listesFiltres->addItem("Blur B2");
+    listesFiltres->addItem("Blur B3");
+
+
     add = new QPushButton("Add Filter");
     validate = new QPushButton("Create");
     dispFilters = new QTextEdit();

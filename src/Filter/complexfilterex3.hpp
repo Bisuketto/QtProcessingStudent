@@ -3,6 +3,8 @@
 
 #include "complexfilter.hpp"
 #include "upsamplefilter.hpp"
+#include "simplegreyfilter.hpp"
+#include "pow2normblurfilter.hpp"
 
 class ComplexFilterEx3 : public ComplexFilter
 {

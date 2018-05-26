@@ -3,6 +3,8 @@
 
 #include "complexfilter.hpp"
 #include "liablegreyfilter.hpp"
+#include "detectionfilter3p3.hpp"
+#include "pow2normblurfilter.hpp"
 
 class ComplexFilterEx4 : public ComplexFilter
 {
