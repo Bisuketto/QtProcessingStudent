@@ -26,7 +26,6 @@ class DetectionFilter : public ConvolutionFilter{
 public:
   DetectionFilter();
   DetectionFilter( QString _name, std::vector<int> _matrix);
-  ~DetectionFilter();
 };
 
 class BlurFilter : public ConvolutionFilter{

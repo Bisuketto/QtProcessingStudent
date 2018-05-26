@@ -12,11 +12,11 @@ public:
     void process(FastImage* _buffIn, FastImage* _buffOut);
 };
 
-class B2 : public NotPow2NormBlurFilter
+class BlurB2 : public NotPow2NormBlurFilter
 {
 public:
-    B2();
-    B2( QString _name);
+    BlurB2();
+    BlurB2( QString _name);
     void process(FastImage *_buffIn, FastImage *_buffOut);
 };
 

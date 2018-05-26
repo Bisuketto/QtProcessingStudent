@@ -79,27 +79,27 @@ void Pow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
     }
 }
 
-B0::B0() : Pow2NormBlurFilter( "B0", { 0, 1, 0, 1, 4, 1, 0, 1, 0}, 8)
+BlurB0::BlurB0() : Pow2NormBlurFilter( "BlurB0", { 0, 1, 0, 1, 4, 1, 0, 1, 0}, 8)
 {
 }
 
-B0::B0( QString _name) : Pow2NormBlurFilter( _name, { 0, 1, 0, 1, 4, 1, 0, 1, 0}, 8)
+BlurB0::BlurB0( QString _name) : Pow2NormBlurFilter( _name, { 0, 1, 0, 1, 4, 1, 0, 1, 0}, 8)
 {
 }
 
-B1::B1() : Pow2NormBlurFilter( "B1", { 1, 2, 1, 2, 8, 2, 1, 2, 1}, 16)
+BlurB1::BlurB1() : Pow2NormBlurFilter( "BlurB1", { 1, 2, 1, 2, 8, 2, 1, 2, 1}, 16)
 {
 }
 
-B1::B1( QString _name) : Pow2NormBlurFilter( _name, { 1, 2, 1, 2, 8, 2, 1, 2, 1}, 16)
+BlurB1::BlurB1( QString _name) : Pow2NormBlurFilter( _name, { 1, 2, 1, 2, 8, 2, 1, 2, 1}, 16)
 {
 }
 
-B3::B3() : Pow2NormBlurFilter( "B3", { 1, 1, 1, 1, 0, 1, 1, 1, 1}, 8)
+BlurB3::BlurB3() : Pow2NormBlurFilter( "BlurB3", { 1, 1, 1, 1, 0, 1, 1, 1, 1}, 8)
 {
 }
 
-B3::B3( QString _name) : Pow2NormBlurFilter( _name, { 1, 1, 1, 1, 0, 1, 1, 1, 1}, 8)
+BlurB3::BlurB3( QString _name) : Pow2NormBlurFilter( _name, { 1, 1, 1, 1, 0, 1, 1, 1, 1}, 8)
 {
 }
 

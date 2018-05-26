@@ -7,7 +7,7 @@ class SimpleGreyFilter : public GreyFilter
 {
 public:
     SimpleGreyFilter(QString _name);
-    ~SimpleGreyFilter();
+    SimpleGreyFilter();
 };
 
 #endif // SIMPLEGREYFILTER_H

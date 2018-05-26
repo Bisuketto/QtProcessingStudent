@@ -7,7 +7,7 @@ class FilterG : public CanalFilter
 {
 public:
     FilterG(QString _name);
-    ~FilterG();
+    FilterG();
 };
 
 #endif // FILTERG_HPP

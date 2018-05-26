@@ -3,7 +3,7 @@
 ComplexFilterEx2::ComplexFilterEx2(QString _name) : ComplexFilter(_name)
 {
     DownSampleFilterPick* dspick = new DownSampleFilterPick("DownSample");
-    M9* contour = new M9("ContourM9");
+    DetectionM9* contour = new DetectionM9("DetectionM9");
     this->addFilter(dspick);
     this->addFilter(contour);
 }

@@ -11,11 +11,11 @@ public:
     void process(FastImage *_buffIn, FastImage *_buffOut);
 };
 
-class M0 : public DetectionFilter2p1
+class DetectionM0 : public DetectionFilter2p1
 {
 public:
-    M0();
-    M0( QString _name);
+    DetectionM0();
+    DetectionM0( QString _name);
 };
 
 #endif // DETECTIONFILTER2P1_HPP

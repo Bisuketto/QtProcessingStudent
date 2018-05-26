@@ -5,6 +5,6 @@ FilterG::FilterG(QString _name) : CanalFilter(_name, 0x0000FF00)
 
 }
 
-FilterG::~FilterG(){
+FilterG::FilterG() : CanalFilter( "GreenCanal", 0x0000FF00){
 
 }

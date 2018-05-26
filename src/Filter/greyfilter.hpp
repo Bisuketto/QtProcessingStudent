@@ -8,7 +8,6 @@ class GreyFilter : public Filter
 {
 public:
     GreyFilter(QString _name, unsigned int _color_values);
-    ~GreyFilter();
     void process(FastImage *_buffIn, FastImage *_buffOut);
 
 private:

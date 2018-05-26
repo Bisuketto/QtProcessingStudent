@@ -62,21 +62,21 @@ PlayerInterface::PlayerInterface()
     ComplexFilterEx3* cmp3 = new ComplexFilterEx3("Complex Filter 3");
     ComplexFilterEx4* cmp4 = new ComplexFilterEx4("Complex Filter 4");
 
-    M0* lecontourdupauvre0 = new M0("ContourM0");
-    M1* lecontourdupauvre1 = new M1("ContourM1");
-    M2* lecontourdupauvre2 = new M2("ContourM2");
-    M3* lecontourdupauvre3 = new M3("ContourM3");
-    M4* lecontourdupauvre4 = new M4("ContourM4");
-    M5* lecontourdupauvre5 = new M5("ContourM5");
-    M6* lecontourdupauvre6 = new M6("ContourM6");
-    M7* lecontourdupauvre7 = new M7("ContourM7");
-    M8* lecontourdupauvre8 = new M8("ContourM8");
-    M9* lecontourdupauvre9 = new M9("ContourM9");
+    DetectionM0* lecontourdupauvre0 = new DetectionM0("DetectionM0");
+    DetectionM1* lecontourdupauvre1 = new DetectionM1("DetectionM1");
+    DetectionM2* lecontourdupauvre2 = new DetectionM2("DetectionM2");
+    DetectionM3* lecontourdupauvre3 = new DetectionM3("DetectionM3");
+    DetectionM4* lecontourdupauvre4 = new DetectionM4("DetectionM4");
+    DetectionM5* lecontourdupauvre5 = new DetectionM5("DetectionM5");
+    DetectionM6* lecontourdupauvre6 = new DetectionM6("DetectionM6");
+    DetectionM7* lecontourdupauvre7 = new DetectionM7("DetectionM7");
+    DetectionM8* lecontourdupauvre8 = new DetectionM8("DetectionM8");
+    DetectionM9* lecontourdupauvre9 = new DetectionM9("DetectionM9");
 
-    B0* lefloudupauvre0    = new B0("FlouB0");
-    B1* lefloudupauvre1    = new B1("FlouB1");
-    B2* lefloudupauvre2    = new B2("FlouB2");
-    B3* lefloudupauvre3    = new B3("FlouB3");
+    BlurB0* lefloudupauvre0    = new BlurB0("BlurB0");
+    BlurB1* lefloudupauvre1    = new BlurB1("BlurB1");
+    BlurB2* lefloudupauvre2    = new BlurB2("BlurB2");
+    BlurB3* lefloudupauvre3    = new BlurB3("BlurB3");
 
     filters->addFilter(nof);
     filters->addFilter(invf);

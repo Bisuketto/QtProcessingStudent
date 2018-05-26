@@ -56,15 +56,15 @@ void NotPow2NormBlurFilter::process(FastImage *_buffIn, FastImage *_buffOut)
     }
 }
 
-B2::B2() : NotPow2NormBlurFilter( "B2", { 1, 1, 1, 1, 1, 1, 1, 1, 1}, 9)
+BlurB2::BlurB2() : NotPow2NormBlurFilter( "BlurB2", { 1, 1, 1, 1, 1, 1, 1, 1, 1}, 9)
 {
 }
 
-B2::B2( QString _name) : NotPow2NormBlurFilter( _name, { 1, 1, 1, 1, 1, 1, 1, 1, 1}, 9)
+BlurB2::BlurB2( QString _name) : NotPow2NormBlurFilter( _name, { 1, 1, 1, 1, 1, 1, 1, 1, 1}, 9)
 {
 }
 
-void B2::process(FastImage *_buffIn, FastImage *_buffOut)
+void BlurB2::process(FastImage *_buffIn, FastImage *_buffOut)
 {
     int w = _buffIn->width(), h = _buffIn->height();
     if( _buffOut->width() != w || _buffOut->height() != h ){

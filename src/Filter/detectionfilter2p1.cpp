@@ -35,12 +35,12 @@ void DetectionFilter2p1::process(FastImage *_buffIn, FastImage *_buffOut)
     }
 }
 
-M0::M0() : DetectionFilter2p1( "M0", { -1, 1})
+DetectionM0::DetectionM0() : DetectionFilter2p1( "DetectionM0", { -1, 1})
 {
 
 }
 
-M0::M0( QString _name) : DetectionFilter2p1( _name, { -1, 1})
+DetectionM0::DetectionM0( QString _name) : DetectionFilter2p1( _name, { -1, 1})
 {
 
 }

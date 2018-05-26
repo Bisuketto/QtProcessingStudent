@@ -5,10 +5,6 @@ GreyFilter::GreyFilter(QString _name, unsigned int _color_values) : Filter(_name
     color_values = _color_values; // XXRRGGBB
 }
 
-GreyFilter::~GreyFilter(){
-
-}
-
 void GreyFilter::process(FastImage *_buffIn, FastImage *_buffOut){
 
     if( _buffOut->width() != _buffIn->width() || _buffOut->height() != _buffIn->height() ){

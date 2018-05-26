@@ -34,10 +34,10 @@ void DetectionFilter3p1::process(FastImage* _buffIn, FastImage* _buffOut){
     }
 }
 
-M1::M1() : DetectionFilter3p1( "M1", { -1, 2, -1})
+DetectionM1::DetectionM1() : DetectionFilter3p1( "DetectionM1", { -1, 2, -1})
 {
 }
 
-M1::M1(QString _name) : DetectionFilter3p1( _name, { -1, 2, -1})
+DetectionM1::DetectionM1(QString _name) : DetectionFilter3p1( _name, { -1, 2, -1})
 {
 }

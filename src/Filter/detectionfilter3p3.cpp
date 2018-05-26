@@ -48,66 +48,66 @@ void DetectionFilter3p3::process(FastImage *_buffIn, FastImage *_buffOut){
     }
 }
 
-M2::M2() : DetectionFilter3p3( "M2",  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
+DetectionM2::DetectionM2() : DetectionFilter3p3( "DetectionM2",  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
 {
 }
 
-M2::M2( QString _name) : DetectionFilter3p3( _name,  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
+DetectionM2::DetectionM2( QString _name) : DetectionFilter3p3( _name,  { -1, 0, 1, -2, 0, 2, -1, 0, 1})
 {
 }
 
-M3::M3() : DetectionFilter3p3( "M3", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+DetectionM3::DetectionM3() : DetectionFilter3p3( "DetectionM3", { -1, 0, 1, -1, 0, 1, -1, 0, 1} )
 {
 }
 
-M3::M3( QString _name) : DetectionFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
+DetectionM3::DetectionM3( QString _name) : DetectionFilter3p3( _name,{ -1, 0, 1, -1, 0, 1, -1, 0, 1} )
 {
 }
 
-M4::M4() : DetectionFilter3p3( "M4", { -1, -2, -1, 0, 0, 0, 1, 2, 1} )
+DetectionM4::DetectionM4() : DetectionFilter3p3( "DetectionM4", { -1, -2, -1, 0, 0, 0, 1, 2, 1} )
 {
 }
 
-M4::M4( QString _name) : DetectionFilter3p3( _name,{ -1, -2, -1, 0, 0, 0, 1, 2, 1} )
+DetectionM4::DetectionM4( QString _name) : DetectionFilter3p3( _name,{ -1, -2, -1, 0, 0, 0, 1, 2, 1} )
 {
 }
 
-M5::M5() : DetectionFilter3p3( "M5", { -1, -1, -1, 0, 0, 0, 1, 1, 1} )
+DetectionM5::DetectionM5() : DetectionFilter3p3( "DetectionM5", { -1, -1, -1, 0, 0, 0, 1, 1, 1} )
 {
 }
 
-M5::M5( QString _name) : DetectionFilter3p3( _name,{ -1, -1, -1, 0, 0, 0, 1, 1, 1} )
+DetectionM5::DetectionM5( QString _name) : DetectionFilter3p3( _name,{ -1, -1, -1, 0, 0, 0, 1, 1, 1} )
 {
 }
 
-M6::M6() : DetectionFilter3p3( "M6", { 0, -1, 0, -1, 4, -1, 0, -1, 0} )
+DetectionM6::DetectionM6() : DetectionFilter3p3( "DetectionM6", { 0, -1, 0, -1, 4, -1, 0, -1, 0} )
 {
 }
 
-M6::M6( QString _name) : DetectionFilter3p3( _name,{ 0, -1, 0, -1, 4, -1, 0, -1, 0} )
+DetectionM6::DetectionM6( QString _name) : DetectionFilter3p3( _name,{ 0, -1, 0, -1, 4, -1, 0, -1, 0} )
 {
 }
 
-M7::M7() : DetectionFilter3p3( "M7", { -1, -1, -1, -1, 8, -1, -1, -1, -1} )
+DetectionM7::DetectionM7() : DetectionFilter3p3( "DetectionM7", { -1, -1, -1, -1, 8, -1, -1, -1, -1} )
 {
 }
 
-M7::M7( QString _name) : DetectionFilter3p3( _name,{ -1, -1, -1, -1, 8, -1, -1, -1, -1} )
+DetectionM7::DetectionM7( QString _name) : DetectionFilter3p3( _name,{ -1, -1, -1, -1, 8, -1, -1, -1, -1} )
 {
 }
 
-M8::M8() : DetectionFilter3p3( "M8", { -1,-2,-1,-2,12,-2,-1,-2,-1} )
+DetectionM8::DetectionM8() : DetectionFilter3p3( "DetectionM8", { -1,-2,-1,-2,12,-2,-1,-2,-1} )
 {
 }
 
-M8::M8( QString _name) : DetectionFilter3p3( _name,{ -1,-2,-1,-2,12,-2,-1,-2,-1} )
+DetectionM8::DetectionM8( QString _name) : DetectionFilter3p3( _name,{ -1,-2,-1,-2,12,-2,-1,-2,-1} )
 {
 }
 
-M9::M9() : DetectionFilter3p3( "M9", { -1, -1, 0, -1, 0, 1, 0, 1, 1} )
+DetectionM9::DetectionM9() : DetectionFilter3p3( "DetectionM9", { -1, -1, 0, -1, 0, 1, 0, 1, 1} )
 {
 }
 
-M9::M9( QString _name) : DetectionFilter3p3( _name,{ -1, -1, 0, -1, 0, 1, 0, 1, 1} )
+DetectionM9::DetectionM9( QString _name) : DetectionFilter3p3( _name,{ -1, -1, 0, -1, 0, 1, 0, 1, 1} )
 {
 }

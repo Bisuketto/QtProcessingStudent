@@ -17,25 +17,25 @@ protected:
     void set_shift();
 };
 
-class B0 : public Pow2NormBlurFilter
+class BlurB0 : public Pow2NormBlurFilter
 {
 public:
-    B0();
-    B0( QString _name);
+    BlurB0();
+    BlurB0( QString _name);
 };
 
-class B1 : public Pow2NormBlurFilter
+class BlurB1 : public Pow2NormBlurFilter
 {
 public:
-    B1();
-    B1( QString _name);
+    BlurB1();
+    BlurB1( QString _name);
 };
 
-class B3 : public Pow2NormBlurFilter
+class BlurB3 : public Pow2NormBlurFilter
 {
 public:
-    B3();
-    B3( QString _name);
+    BlurB3();
+    BlurB3( QString _name);
 };
 
 #endif // POW2NORMBLURFILTER_H

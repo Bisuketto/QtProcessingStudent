@@ -22,8 +22,6 @@ DetectionFilter::DetectionFilter() : ConvolutionFilter(){}
 
 DetectionFilter::DetectionFilter(QString _name, std::vector<int> _matrix) : ConvolutionFilter(_name, _matrix){}
 
-DetectionFilter::~DetectionFilter() {}
-
 int BlurFilter::get_norm(){
     return *norm;
 }

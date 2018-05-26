@@ -7,7 +7,7 @@ class LiableGreyFilter : public GreyFilter
 {
 public:
     LiableGreyFilter(QString _name);
-    ~LiableGreyFilter();
+    LiableGreyFilter();
 };
 
 #endif // LIABLEGREYFILTER_H

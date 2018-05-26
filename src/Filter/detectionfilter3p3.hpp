@@ -11,60 +11,60 @@ public:
     void process(FastImage *_buffIn, FastImage *_buffOut);
 };
 
-class M2 : public DetectionFilter3p3
+class DetectionM2 : public DetectionFilter3p3
 {
 public:
-    M2();
-    M2( QString _name);
+    DetectionM2();
+    DetectionM2( QString _name);
 };
 
-class M3 : public DetectionFilter3p3
+class DetectionM3 : public DetectionFilter3p3
 {
 public:
-    M3();
-    M3( QString _name);
+    DetectionM3();
+    DetectionM3( QString _name);
 };
 
-class M4 : public DetectionFilter3p3
+class DetectionM4 : public DetectionFilter3p3
 {
 public:
-    M4();
-    M4( QString _name);
+    DetectionM4();
+    DetectionM4( QString _name);
 };
 
-class M5 : public DetectionFilter3p3
+class DetectionM5 : public DetectionFilter3p3
 {
 public:
-    M5();
-    M5( QString _name);
+    DetectionM5();
+    DetectionM5( QString _name);
 };
 
-class M6 : public DetectionFilter3p3
+class DetectionM6 : public DetectionFilter3p3
 {
 public:
-    M6();
-    M6( QString _name);
+    DetectionM6();
+    DetectionM6( QString _name);
 };
 
-class M7 : public DetectionFilter3p3
+class DetectionM7 : public DetectionFilter3p3
 {
 public:
-    M7();
-    M7( QString _name);
+    DetectionM7();
+    DetectionM7( QString _name);
 };
 
-class M8 : public DetectionFilter3p3
+class DetectionM8 : public DetectionFilter3p3
 {
 public:
-    M8();
-    M8( QString _name);
+    DetectionM8();
+    DetectionM8( QString _name);
 };
 
-class M9 : public DetectionFilter3p3
+class DetectionM9 : public DetectionFilter3p3
 {
 public:
-    M9();
-    M9( QString _name);
+    DetectionM9();
+    DetectionM9( QString _name);
 };
 
 #endif // DETECTIONFILTER3P3_HPP
