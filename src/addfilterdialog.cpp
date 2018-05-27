@@ -61,7 +61,14 @@ AddFilterDialog::AddFilterDialog(QString* _name, char* _filterstoadd, int* _n, Q
 }
 
 AddFilterDialog::~AddFilterDialog(){
-
+    delete dispFilters;
+    delete add;
+    delete validate;
+    delete name;
+    delete filterstoadd;
+    delete nout;
+    delete newname;
+    delete name;
 }
 
 void AddFilterDialog::addfilter(){
