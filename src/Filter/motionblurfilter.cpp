@@ -25,9 +25,9 @@ void MotionBlurFilter::process(FastImage* _buffIn, FastImage* _buffOut){
     else{
         for(int y=0; y<_buffIn->height(); y++){
             for(int x=0; x<_buffIn->width(); x++){
-                    _buffOut->Red  (y, x, (int)((1./2)*_buffIn->Red(y, x) + (3./10)*buffTemp[0]->Red(y, x) + (2./10)*buffTemp[1]->Red(y, x)));
-                    _buffOut->Green(y, x, (int)((1./2)*_buffIn->Green(y, x) + (3./10)*buffTemp[0]->Green(y, x) + (2./10)*buffTemp[1]->Green(y, x)));
-                    _buffOut->Blue (y, x, (int)((1./2)*_buffIn->Blue(y, x) + (3./10)*buffTemp[0]->Blue(y, x) + (2./10)*buffTemp[1]->Blue(y, x)));
+                    _buffOut->Red  (y, x, (_buffIn->Red(y, x) >> 1) + ((77*buffTemp[0]->Red(y, x)) >> 8) + ((51*buffTemp[1]->Red(y, x)) >> 8));
+                    _buffOut->Green(y, x, (_buffIn->Green(y, x) >> 1) + ((77*buffTemp[0]->Green(y, x)) >> 8) + ((51*buffTemp[1]->Green(y, x)) >> 8));
+                    _buffOut->Blue (y, x, (_buffIn->Blue(y, x) >> 1) + ((77*buffTemp[0]->Blue(y, x)) >> 8) + ((51*buffTemp[1]->Blue(y, x)) >> 8));
             }
         }
 
