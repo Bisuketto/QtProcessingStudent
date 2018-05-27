@@ -39,6 +39,9 @@ PlayerInterface::PlayerInterface()
     QVBoxLayout *l4     = new QVBoxLayout;
     setLayout(layout);
 
+    //
+    // ON CREE LES FILTRES
+    //
     filters = new FilterManager();
 
     NoFilter* nof = new NoFilter("None");
@@ -252,6 +255,28 @@ PlayerInterface::PlayerInterface()
 //
 PlayerInterface::~PlayerInterface()
 {
+    delete timerFPS;
+    delete poller;
+    delete dTime;
+    delete pTime;
+    delete sTime;
+    delete ouWidth;
+    delete ouHeight;
+    delete inWidth;
+    delete inHeight;
+    delete start;
+    delete nextFrame;
+    delete pause;
+    delete filterFrame;
+    delete addFilter;
+    delete filters;
+    delete _videoWidget;
+    delete _listeFiltres;
+    delete c;
+    delete bufferIn;
+    delete bufferTmp1;
+    delete bufferTmp2;
+    delete bufferOut;
 }
 
 
