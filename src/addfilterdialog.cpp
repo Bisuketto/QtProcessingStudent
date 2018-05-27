@@ -64,11 +64,6 @@ AddFilterDialog::~AddFilterDialog(){
     delete dispFilters;
     delete add;
     delete validate;
-    delete name;
-    delete filterstoadd;
-    delete nout;
-    delete newname;
-    delete name;
 }
 
 void AddFilterDialog::addfilter(){
